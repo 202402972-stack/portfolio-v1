@@ -95,13 +95,13 @@ export default function Hero() {
         </FadeLeft>
 
         <FadeRight>
-          <div className="flex flex-col items-center justify-center relative mt-12 md:mt-0">
-            <div className="relative z-10 w-full max-w-[416px]">
+          <div className="flex flex-col items-center justify-center relative">
+            <div className="relative z-10 w-full max-w-[288px] sm:max-w-[320px] md:max-w-[416px]">
               <ProfileMark gradientId="hero-profile-gradient" className="block w-full h-auto aspect-square floating transition-all duration-700" />
             </div>
 
             {/* Quick Stats redesigned as floating minimal badges */}
-            <div className="absolute -bottom-10 md:-bottom-12 -left-4 md:-left-12 z-20 flex flex-col gap-3">
+            <div className="relative z-20 mt-6 flex w-full max-w-[320px] flex-col gap-3 md:absolute md:-bottom-12 md:-left-12 md:mt-0 md:w-auto md:max-w-none">
               {quickStatsList.map((stat, index) => (
                 <div className={`floating flex items-center gap-3 bg-background/90 backdrop-blur-md border border-text-secondary/10 p-3 pr-5 rounded-2xl shadow-xl hover:-translate-y-1 transition-transform duration-300 animate-in fade-in slide-in-from-bottom-5`} style={{ animationDelay: `${index * 150}ms` }} key={index}>
                   <div className="bg-text-primary text-background p-2 rounded-xl">{stat.icon}</div>
