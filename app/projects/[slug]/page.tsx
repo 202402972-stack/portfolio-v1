@@ -7,6 +7,7 @@ import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import ProjectGallery from "@/components/ProjectGallery"
 import { getProject, projectList } from "@/lib/projects"
+import { siteUrl } from "@/lib/site"
 
 type Props = { params: Promise<{ slug: string }> }
 export const dynamicParams = false
@@ -21,11 +22,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: project.title,
     description: project.shortDescription,
-    ...(process.env.NEXT_PUBLIC_BASE_URL ? { alternates: { canonical: `/projects/${project.slug}` } } : {}),
+    alternates: { canonical: `/projects/${project.slug}` },
     openGraph: {
       title: `${project.title} | Abdelhamed Nada`,
       description: project.shortDescription,
       type: "article",
+      url: `/projects/${project.slug}`,
+      locale: "en_US",
+      siteName: "Abdelhamed Nada Portfolio",
       images: [{ url: project.imagePath, width: project.imageWidth, height: project.imageHeight, alt: project.title }],
     },
     twitter: { card: "summary_large_image", title: project.title, description: project.shortDescription, images: [project.imagePath] },
@@ -46,7 +50,7 @@ export default async function ProjectPage({ params }: Props) {
   const screens = [{ src: project.imagePath, alt: "home screen", caption: "Home — project overview", width: project.imageWidth, height: project.imageHeight }, ...project.gallery]
   const position = projectList.findIndex((item) => item.slug === project.slug)
   const nextProject = projectList[(position + 1) % projectList.length]
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL?.replace(/\/$/, "")
+  const baseUrl = siteUrl
 
   return <>
     <Header />

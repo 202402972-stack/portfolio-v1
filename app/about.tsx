@@ -22,15 +22,14 @@ export default function About() {
           <div className="lg:col-span-5 hidden lg:flex flex-col items-center lg:items-center justify-center relative">
             <div className="w-full max-w-[350px] lg:max-w-[450px] relative">
               <Fade>
-                <div className="relative z-10 p-2 bg-background border border-text-secondary/10 rounded-3xl shadow-2xl overflow-hidden aspect-[4/5] w-full group transition-all duration-500 hover:shadow-[0_20px_40px_-5px_rgb(0,0,0,0.15)] dark:hover:shadow-[0_20px_40px_-5px_rgba(255,255,255,0.05)] hover:-translate-y-1">
+                <div className="relative z-10 p-2 bg-[#111827] border border-text-secondary/10 rounded-3xl shadow-2xl overflow-hidden aspect-[4/5] w-full group transition-all duration-500 hover:shadow-[0_20px_40px_-5px_rgb(0,0,0,0.15)] dark:hover:shadow-[0_20px_40px_-5px_rgba(255,255,255,0.05)] hover:-translate-y-1">
                   <Image 
-                    src="/logo.svg" 
-                    alt="Abdelhamed Nada" 
+                    src="/profile-logo.svg"
+                    alt="Abdelhamed Nada logo"
                     fill 
-                    className="portfolio-logo object-cover transition-all duration-700 scale-100 group-hover:scale-105" 
-                    sizes="(max-width: 1024px) 100vw, 500px"
+                    className="object-contain p-6 transition-all duration-700 scale-100 group-hover:scale-105"
+                    sizes="(min-width: 1280px) 443px, (min-width: 1024px) 39vw, 350px"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-background/80 to-transparent opacity-60 group-hover:opacity-20 transition-opacity duration-500 rounded-3xl"></div>
                 </div>
                 <div className="absolute -bottom-8 -left-8 text-8xl lg:text-9xl font-black text-text-secondary/5 select-none pointer-events-none tracking-tighter mix-blend-multiply dark:mix-blend-screen z-0">DEV.</div>
               </Fade>

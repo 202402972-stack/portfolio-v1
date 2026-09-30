@@ -1,19 +1,15 @@
 import { MetadataRoute } from "next"
 import { projectList } from "@/lib/projects"
+import { siteUrl } from "@/lib/site"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
-
-  if (!baseUrl) return []
-
   return [
     {
-      url: `${baseUrl}`,
-      lastModified: new Date(),
+      url: siteUrl,
       changeFrequency: "yearly",
       priority: 1,
     },
-    { url: `${baseUrl.replace(/\/$/, "")}/projects`, changeFrequency: "monthly", priority: 0.8 },
-    ...projectList.map((project) => ({ url: `${baseUrl.replace(/\/$/, "")}/projects/${project.slug}`, changeFrequency: "monthly" as const, priority: 0.7 })),
+    { url: `${siteUrl}/projects`, changeFrequency: "monthly", priority: 0.8 },
+    ...projectList.map((project) => ({ url: `${siteUrl}/projects/${project.slug}`, changeFrequency: "monthly" as const, priority: 0.7 })),
   ]
 }

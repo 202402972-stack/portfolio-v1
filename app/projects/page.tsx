@@ -4,11 +4,27 @@ import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import ProjectCards from "@/components/ProjectCards"
 import { projectList } from "@/lib/projects"
+import { socialImage } from "@/lib/site"
 
 export const metadata: Metadata = {
   title: "Projects",
   description: "Explore Abdelhamed Nada's project case studies, technologies, screenshots, and live websites.",
-  ...(process.env.NEXT_PUBLIC_BASE_URL ? { alternates: { canonical: "/projects" } } : {}),
+  alternates: { canonical: "/projects" },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: "Abdelhamed Nada Portfolio",
+    title: "Projects | Abdelhamed Nada",
+    description: "Explore Abdelhamed Nada's project case studies, technologies, screenshots, and live websites.",
+    url: "/projects",
+    images: [socialImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Projects | Abdelhamed Nada",
+    description: "Explore Abdelhamed Nada's project case studies, technologies, screenshots, and live websites.",
+    images: [socialImage],
+  },
 }
 
 export default function ProjectsPage() {

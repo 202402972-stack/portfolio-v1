@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import localFont from "next/font/local"
 import "../styles/globals.css"
 import PageLoader from "@/components/PageLoader"
+import { siteUrl, socialImage } from "@/lib/site"
 
 const poppins = localFont({
   src: [
@@ -12,7 +13,7 @@ const poppins = localFont({
 })
 
 export const metadata: Metadata = {
-  ...(process.env.NEXT_PUBLIC_BASE_URL ? { metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL) } : {}),
+  metadataBase: new URL(siteUrl),
   title: { default: "Abdelhamed Nada | Portfolio", template: "%s | Abdelhamed Nada" },
   description: "Abdelhamed Nada builds bilingual web apps, WebGL interfaces, a live temporary inbox, and GitHub automation with React, TypeScript, and Python.",
   keywords: ["Abdelhamed Nada", "Portfolio", "Frontend Developer", "Full-Stack Developer", "React", "Next.js", "TypeScript", "TanStack Start", "Three.js", "WebGL", "GLSL", "Python", "Telegram Bot API", "Glassmorphism"],
@@ -24,14 +25,15 @@ export const metadata: Metadata = {
     title: "Abdelhamed Nada | Portfolio",
     description: "Bilingual web apps, glassmorphic WebGL interfaces, and Python developer automation.",
     siteName: "Abdelhamed Nada Portfolio",
+    images: [socialImage],
   },
   icons: { icon: "/logo.svg", shortcut: "/logo.svg", apple: "/logo.svg" },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Abdelhamed Nada | Portfolio",
     description: "Bilingual web apps, glassmorphic WebGL interfaces, and Python developer automation.",
+    images: [socialImage],
   },
-  ...(process.env.NEXT_PUBLIC_BASE_URL ? { alternates: { canonical: "/" } } : {}),
 }
 
 export default function RootLayout({
