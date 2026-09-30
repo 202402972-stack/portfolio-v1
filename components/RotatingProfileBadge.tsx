@@ -1,0 +1,62 @@
+"use client"
+
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion"
+import { useEffect, useState, type ReactNode } from "react"
+
+type Badge = { message: string; icon: ReactNode }
+
+export default function RotatingProfileBadge({ items }: { items: readonly Badge[] }) {
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [paused, setPaused] = useState(false)
+  const reduceMotion = useReducedMotion()
+
+  useEffect(() => {
+    if (paused || items.length < 2) return
+
+    const timer = window.setInterval(() => {
+      setActiveIndex((current) => (current + 1) % items.length)
+    }, 3400)
+
+    return () => window.clearInterval(timer)
+  }, [paused, items.length])
+
+  const active = items[activeIndex]
+  if (!active) return null
+
+  return (
+    <div
+      role="group"
+      aria-label="Profile highlights"
+      tabIndex={0}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocus={() => setPaused(true)}
+      onBlur={() => setPaused(false)}
+      className="relative h-[72px] w-full max-w-[320px] overflow-hidden rounded-2xl border border-text-secondary/10 bg-background/90 shadow-xl backdrop-blur-md outline-offset-4 focus-visible:outline-2 focus-visible:outline-text-primary"
+      style={{ perspective: 700 }}
+    >
+      <span className="sr-only">{items.map((item) => item.message).join(". ")}</span>
+      <AnimatePresence initial={false} mode="wait">
+        <motion.div
+          key={active.message}
+          aria-hidden="true"
+          className="absolute inset-0 flex items-center gap-3 px-3 pr-5"
+          initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 44, rotateX: -65, scale: 0.9, filter: "blur(8px)" }}
+          animate={{ opacity: 1, y: 0, rotateX: 0, scale: 1, filter: "blur(0px)" }}
+          exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -36, rotateX: 55, scale: 0.94, filter: "blur(6px)" }}
+          transition={reduceMotion ? { duration: 0 } : { type: "spring", stiffness: 340, damping: 25, mass: 0.8 }}
+        >
+          <motion.div
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-text-primary text-background"
+            initial={reduceMotion ? false : { rotate: -100, scale: 0.45 }}
+            animate={{ rotate: 0, scale: 1 }}
+            transition={reduceMotion ? { duration: 0 } : { type: "spring", stiffness: 400, damping: 20, delay: 0.06 }}
+          >
+            {active.icon}
+          </motion.div>
+          <span className="whitespace-nowrap text-xs font-semibold text-text-primary md:text-sm">{active.message}</span>
+        </motion.div>
+      </AnimatePresence>
+    </div>
+  )
+}
