@@ -28,7 +28,7 @@ export default function RotatingProfileBadge({ items }: { items: readonly Badge[
 
     const timer = window.setInterval(() => {
       setRotation((current) => advanceProfileHighlights(current, items.length))
-    }, 1600)
+    }, 4000)
 
     return () => window.clearInterval(timer)
   }, [paused, items.length])
