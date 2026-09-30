@@ -9,7 +9,7 @@ export default function About() {
 
   return (
     <>
-      <section id="about" className="w-full max-w-7xl mx-auto pt-8 pb-24 md:pt-12 md:pb-32 cursor-default bg-background overflow-hidden border-t border-text-secondary/10">
+      <section id="about" className="w-full max-w-7xl mx-auto pt-10 pb-24 md:pt-14 md:pb-32 cursor-default bg-background overflow-hidden border-t border-text-secondary/10">
         <FadeDown>
           <div className="max-w-7xl mx-auto px-6 md:px-12 mb-16 md:mb-24 w-full text-left">
             <h2 className="text-sm font-bold tracking-[0.2em] text-text-secondary uppercase mb-4">Discover</h2>

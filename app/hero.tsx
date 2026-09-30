@@ -1,5 +1,5 @@
 "use client"
-import ProfileMark from "@/components/ProfileMark"
+import AnimatedProfileMark from "@/components/AnimatedProfileMark"
 import RotatingProfileBadge from "@/components/RotatingProfileBadge"
 import { useEffect, useState, useMemo } from "react"
 import FadeRight from "@/components/animations/FadeRight"
@@ -48,7 +48,7 @@ export default function Hero() {
 
   return (
     <>
-      <section id="home" className="w-full max-w-7xl mx-auto cursor-default grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center px-6 md:px-12 pt-24 pb-8 md:pt-32 md:pb-12 overflow-hidden">
+      <section id="home" className="w-full max-w-7xl mx-auto cursor-default grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center px-6 md:px-12 pt-24 pb-10 md:pt-32 md:pb-14 overflow-hidden">
         <FadeLeft>
           <div className="flex flex-col gap-2">
             <div>
@@ -98,10 +98,10 @@ export default function Hero() {
         <FadeRight>
           <div className="flex flex-col items-center justify-center relative">
             <div className="relative z-10 w-full max-w-[288px] sm:max-w-[320px] md:max-w-[416px]">
-              <ProfileMark gradientId="hero-profile-gradient" className="block w-full h-auto aspect-square floating transition-all duration-700" />
+              <AnimatedProfileMark gradientId="hero-profile-gradient" className="block w-full h-auto aspect-square" />
             </div>
 
-            <div className="relative z-20 flex w-full justify-center">
+            <div className="relative z-20 mt-2 flex w-full justify-center md:mt-3">
               <RotatingProfileBadge items={quickStatsList} />
             </div>
           </div>

@@ -15,7 +15,7 @@ export default function RotatingProfileBadge({ items }: { items: readonly Badge[
 
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % items.length)
-    }, 3400)
+    }, 1600)
 
     return () => window.clearInterval(timer)
   }, [paused, items.length])
@@ -44,13 +44,13 @@ export default function RotatingProfileBadge({ items }: { items: readonly Badge[
           initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 44, rotateX: -65, scale: 0.9, filter: "blur(8px)" }}
           animate={{ opacity: 1, y: 0, rotateX: 0, scale: 1, filter: "blur(0px)" }}
           exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -36, rotateX: 55, scale: 0.94, filter: "blur(6px)" }}
-          transition={reduceMotion ? { duration: 0 } : { type: "spring", stiffness: 340, damping: 25, mass: 0.8 }}
+          transition={reduceMotion ? { duration: 0 } : { duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
         >
           <motion.div
             className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-text-primary text-background"
             initial={reduceMotion ? false : { rotate: -100, scale: 0.45 }}
             animate={{ rotate: 0, scale: 1 }}
-            transition={reduceMotion ? { duration: 0 } : { type: "spring", stiffness: 400, damping: 20, delay: 0.06 }}
+            transition={reduceMotion ? { duration: 0 } : { type: "spring", stiffness: 480, damping: 24, delay: 0.02 }}
           >
             {active.icon}
           </motion.div>
