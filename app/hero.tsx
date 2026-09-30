@@ -1,6 +1,5 @@
 "use client"
-import AnimatedProfileMark from "@/components/AnimatedProfileMark"
-import RotatingProfileBadge from "@/components/RotatingProfileBadge"
+import ProfileHighlights from "@/components/ProfileHighlights"
 import { useEffect, useState, useMemo } from "react"
 import FadeRight from "@/components/animations/FadeRight"
 import FadeLeft from "@/components/animations/FadeLeft"
@@ -96,15 +95,7 @@ export default function Hero() {
         </FadeLeft>
 
         <FadeRight>
-          <div className="flex flex-col items-center justify-center relative">
-            <div className="relative z-10 w-full max-w-[288px] sm:max-w-[320px] md:max-w-[416px]">
-              <AnimatedProfileMark gradientId="hero-profile-gradient" className="block w-full h-auto aspect-square" />
-            </div>
-
-            <div className="relative z-20 mt-4 flex w-full justify-center md:mt-5">
-              <RotatingProfileBadge items={quickStatsList} />
-            </div>
-          </div>
+          <ProfileHighlights items={quickStatsList} />
         </FadeRight>
       </section>
     </>

@@ -1,7 +1,7 @@
 "use client"
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion"
-import { useEffect, useState, type ReactNode } from "react"
+import { type ReactNode } from "react"
 
 type Badge = { message: string; icon: ReactNode }
 type Rotation = { indices: number[]; nextSlot: number; latest: number }
@@ -18,20 +18,12 @@ export function advanceProfileHighlights(current: Rotation, itemCount: number): 
   return { indices, nextSlot: (current.nextSlot + 1) % indices.length, latest: next }
 }
 
-export default function RotatingProfileBadge({ items }: { items: readonly Badge[] }) {
-  const [rotation, setRotation] = useState<Rotation>({ indices: [0, 1], nextSlot: 0, latest: 1 })
-  const [paused, setPaused] = useState(false)
+export default function RotatingProfileBadge({ items, visibleIndices, onPauseChange }: {
+  items: readonly Badge[]
+  visibleIndices: readonly number[]
+  onPauseChange: (paused: boolean) => void
+}) {
   const reduceMotion = useReducedMotion()
-
-  useEffect(() => {
-    if (paused || items.length < 3) return
-
-    const timer = window.setInterval(() => {
-      setRotation((current) => advanceProfileHighlights(current, items.length))
-    }, 4000)
-
-    return () => window.clearInterval(timer)
-  }, [paused, items.length])
 
   if (!items.length) return null
 
@@ -40,14 +32,14 @@ export default function RotatingProfileBadge({ items }: { items: readonly Badge[
       role="group"
       aria-label="Profile highlights"
       tabIndex={0}
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onFocus={() => setPaused(true)}
-      onBlur={() => setPaused(false)}
+      onMouseEnter={() => onPauseChange(true)}
+      onMouseLeave={() => onPauseChange(false)}
+      onFocus={() => onPauseChange(true)}
+      onBlur={() => onPauseChange(false)}
       className="flex w-full max-w-[320px] flex-col gap-2 rounded-2xl outline-offset-4 focus-visible:outline-2 focus-visible:outline-text-primary"
     >
       <span className="sr-only">{items.map((item) => item.message).join(". ")}</span>
-      {rotation.indices.map((itemIndex, slot) => {
+      {visibleIndices.map((itemIndex, slot) => {
         const active = items[itemIndex]
         if (!active) return null
 
