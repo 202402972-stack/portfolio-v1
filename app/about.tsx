@@ -2,7 +2,7 @@ import ScrollVelocity from "@/components/ScrollVelocity"
 import FadeDown from "@/components/animations/FadeDown"
 import Fade from "@/components/animations/Fade"
 import FadeLeft from "@/components/animations/FadeLeft"
-import Image from "next/image"
+import ProfileMark from "@/components/ProfileMark"
 
 export default function About() {
   const velocity = 50
@@ -22,14 +22,8 @@ export default function About() {
           <div className="lg:col-span-5 hidden lg:flex flex-col items-center lg:items-center justify-center relative">
             <div className="w-full max-w-[350px] lg:max-w-[450px] relative">
               <Fade>
-                <div className="relative z-10 p-2 bg-[#111827] border border-text-secondary/10 rounded-3xl shadow-2xl overflow-hidden aspect-[4/5] w-full group transition-all duration-500 hover:shadow-[0_20px_40px_-5px_rgb(0,0,0,0.15)] dark:hover:shadow-[0_20px_40px_-5px_rgba(255,255,255,0.05)] hover:-translate-y-1">
-                  <Image 
-                    src="/profile-logo.svg"
-                    alt="Abdelhamed Nada logo"
-                    fill 
-                    className="object-contain p-6 transition-all duration-700 scale-100 group-hover:scale-105"
-                    sizes="(min-width: 1280px) 443px, (min-width: 1024px) 39vw, 350px"
-                  />
+                <div className="relative z-10 aspect-[4/5] w-full group transition-transform duration-500 hover:-translate-y-1">
+                  <ProfileMark gradientId="about-profile-gradient" className="absolute inset-0 w-full h-full p-6 transition-transform duration-700 scale-100 group-hover:scale-105" />
                 </div>
                 <div className="absolute -bottom-8 -left-8 text-8xl lg:text-9xl font-black text-text-secondary/5 select-none pointer-events-none tracking-tighter mix-blend-multiply dark:mix-blend-screen z-0">DEV.</div>
               </Fade>

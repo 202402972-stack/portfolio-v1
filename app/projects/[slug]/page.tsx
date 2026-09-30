@@ -7,7 +7,7 @@ import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import ProjectGallery from "@/components/ProjectGallery"
 import { getProject, projectList } from "@/lib/projects"
-import { siteUrl } from "@/lib/site"
+import { siteUrl, socialImage } from "@/lib/site"
 
 type Props = { params: Promise<{ slug: string }> }
 export const dynamicParams = false
@@ -30,9 +30,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `/projects/${project.slug}`,
       locale: "en_US",
       siteName: "Abdelhamed Nada Portfolio",
-      images: [{ url: project.imagePath, width: project.imageWidth, height: project.imageHeight, alt: project.title }],
+      images: [socialImage, { url: project.imagePath, width: project.imageWidth, height: project.imageHeight, alt: project.title }],
     },
-    twitter: { card: "summary_large_image", title: project.title, description: project.shortDescription, images: [project.imagePath] },
+    twitter: { card: "summary_large_image", title: project.title, description: project.shortDescription, images: [socialImage] },
   }
 }
 
