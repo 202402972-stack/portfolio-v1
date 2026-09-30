@@ -48,7 +48,7 @@ export default function Hero() {
 
   return (
     <>
-      <section id="home" className="w-full max-w-7xl mx-auto cursor-default grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center px-6 md:px-12 pt-24 pb-10 md:pt-32 md:pb-14 overflow-hidden">
+      <section id="home" className="w-full max-w-7xl mx-auto cursor-default grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center px-6 md:px-12 pt-24 pb-12 md:pt-32 md:pb-16 overflow-hidden">
         <FadeLeft>
           <div className="flex flex-col gap-2">
             <div>
@@ -101,7 +101,7 @@ export default function Hero() {
               <AnimatedProfileMark gradientId="hero-profile-gradient" className="block w-full h-auto aspect-square" />
             </div>
 
-            <div className="relative z-20 mt-2 flex w-full justify-center md:mt-3">
+            <div className="relative z-20 mt-4 flex w-full justify-center md:mt-5">
               <RotatingProfileBadge items={quickStatsList} />
             </div>
           </div>
