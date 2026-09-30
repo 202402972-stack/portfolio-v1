@@ -11,7 +11,7 @@ type Sequence = {
   rotation: { indices: number[]; nextSlot: number; latest: number }
 }
 
-export const profileMotionDelay = { beforeLogo: 6000, beforeCards: 7000 }
+export const profileMotionDelay = { beforeLogo: 4000, beforeCards: 4000 }
 
 export function advanceProfileSequence(current: Sequence, itemCount: number): Sequence {
   return current.phase === "logo"
