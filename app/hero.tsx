@@ -47,7 +47,7 @@ export default function Hero() {
 
   return (
     <>
-      <section id="home" className="w-full max-w-7xl mx-auto cursor-default grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center px-6 md:px-12 py-24 md:py-32 overflow-hidden">
+      <section id="home" className="w-full max-w-7xl mx-auto cursor-default grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center px-6 md:px-12 pt-24 pb-12 md:py-32 overflow-hidden">
         <FadeLeft>
           <div className="flex flex-col gap-2">
             <div>
@@ -101,9 +101,9 @@ export default function Hero() {
             </div>
 
             {/* Quick Stats redesigned as floating minimal badges */}
-            <div className="relative z-20 mt-6 flex w-full max-w-[320px] flex-col gap-3 md:absolute md:-bottom-12 md:-left-12 md:mt-0 md:w-auto md:max-w-none">
+            <div className="relative z-20 mt-2 flex w-full max-w-[320px] flex-col gap-2 md:absolute md:-bottom-12 md:-left-12 md:mt-0 md:w-auto md:max-w-none md:gap-3">
               {quickStatsList.map((stat, index) => (
-                <div className={`floating flex items-center gap-3 bg-background/90 backdrop-blur-md border border-text-secondary/10 p-3 pr-5 rounded-2xl shadow-xl hover:-translate-y-1 transition-transform duration-300 animate-in fade-in slide-in-from-bottom-5`} style={{ animationDelay: `${index * 150}ms` }} key={index}>
+                <div className={`floating flex items-center gap-3 bg-background/90 backdrop-blur-md border border-text-secondary/10 px-3 py-2.5 md:p-3 pr-5 rounded-2xl shadow-xl hover:-translate-y-1 transition-transform duration-300 animate-in fade-in slide-in-from-bottom-5`} style={{ animationDelay: `${index * 150}ms` }} key={index}>
                   <div className="bg-text-primary text-background p-2 rounded-xl">{stat.icon}</div>
                   <span className="text-xs md:text-sm font-semibold text-text-primary whitespace-nowrap">{stat.message}</span>
                 </div>

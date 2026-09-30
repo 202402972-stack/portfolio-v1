@@ -5,10 +5,10 @@ export const siteUrl = new URL(
 ).origin
 
 export const socialImage = {
-  url: `${siteUrl}/images/social/portfolio-share-v2.png`,
-  secureUrl: `${siteUrl}/images/social/portfolio-share-v2.png`,
+  url: `${siteUrl}/images/social/portfolio-share-v3.png`,
+  secureUrl: `${siteUrl}/images/social/portfolio-share-v3.png`,
   type: "image/png",
-  width: 1734,
+  width: 1733,
   height: 907,
   alt: "Abdelhamed Nada — Full-Stack Developer portfolio",
 }
