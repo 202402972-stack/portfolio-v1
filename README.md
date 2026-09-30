@@ -43,7 +43,7 @@ The site can run locally without external service credentials. Add values to `.e
 
 | Variable | Used for | Required |
 | --- | --- | --- |
-| `NEXT_PUBLIC_BASE_URL` | Canonical site URL used by metadata, `robots.txt`, and the sitemap | Only when configuring a deployed URL |
+| `NEXT_PUBLIC_BASE_URL` | Override the canonical site URL used by metadata, `robots.txt`, and the sitemap; defaults to `https://abdelhamed-nada.vercel.app` | Only when using a different domain |
 | `NVIDIA_APIKEY` or `NVIDIA_API_KEY` | NVIDIA API key for the chat assistant | Only for the assistant |
 | `NVIDIA_MODEL` | Optional model override; defaults to `nvidia/nemotron-3-super-120b-a12b` | No |
 | `EMAIL_USER` | Gmail account used by the contact endpoint | Only for email delivery |

@@ -6,6 +6,21 @@ import Experience from "./experience"
 import TechStack from "./tech-stack"
 import Project from "./project"
 import Contact from "./contact"
+import type { Metadata } from "next"
+import { siteUrl, socialImage } from "@/lib/site"
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    title: "Abdelhamed Nada | Portfolio",
+    description: "Bilingual web apps, glassmorphic WebGL interfaces, and Python developer automation.",
+    siteName: "Abdelhamed Nada Portfolio",
+    url: siteUrl,
+    images: [socialImage],
+  },
+}
 
 export default function Home() {
   return (

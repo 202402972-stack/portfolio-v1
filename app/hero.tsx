@@ -99,8 +99,8 @@ export default function Hero() {
             {/* Subtle aesthetic backdrop instead of neon glow */}
             <div className="absolute inset-0 bg-linear-to-tr from-thirdary to-background rounded-full scale-110 opacity-50 blur-2xl"></div>
 
-            <div className="relative z-10 p-2 bg-background border border-text-secondary/10 rounded-full shadow-2xl">
-              <Image src="/logo.svg" alt="Abdelhamed Nada logo" width={400} height={400} className="portfolio-logo rounded-full object-cover aspect-square floating transition-all duration-700" priority />
+            <div className="relative z-10 w-full max-w-[416px] p-2 bg-[#111827] border border-text-secondary/10 rounded-[28%] shadow-2xl">
+              <Image src="/profile-logo.svg" alt="Abdelhamed Nada logo" width={400} height={400} sizes="(max-width: 767px) calc(100vw - 64px), 400px" className="w-full h-auto object-contain aspect-square floating transition-all duration-700" priority />
             </div>
 
             {/* Quick Stats redesigned as floating minimal badges */}
