@@ -1,4 +1,11 @@
 Generated with the built-in image generation tool for the portfolio social preview.
-Asset: public/images/social/portfolio-share-v2.png
+Asset: public/images/social/portfolio-share-v3.png
 
-Use case: ads-marketing. Asset: Open Graph social sharing cover for the existing Abdelhamed Nada developer portfolio. Generate one finished premium website sharing image in a WIDE horizontal 1.91:1 landscape composition, ideally 1200 × 630 pixels. Matte almost-black background (#0a0a0a), restrained ivory typography, a sophisticated thin aqua-to-soft-pink accent consistent with an AN developer monogram. Strong clean typographic hierarchy with large, crisp and perfectly readable exact English text: "Abdelhamed Nada" and below in smaller text "Full-Stack Developer · Frontend Specialist". Small "PORTFOLIO" label. To the right, elegant abstract interlocking A and N letterforms made of aqua-pink glass lines, floating freely, no rounded square tile or logo card. Tasteful subtle geometric digital interface forms, fine lighting, much negative space, professional luxury developer identity. All important text comfortably inset by at least 10% from edges to survive social preview crops. No person, no invented client names, no claims, no extra text, no watermark. This is a finished branded social-preview bitmap, not a screenshot of a website and not a document.
+Use case: ads-marketing.
+Asset type: finished social sharing cover for the Abdelhamed Nada portfolio website.
+Primary request: a completely new simple, quiet luxury editorial design that looks like the actual minimalist developer portfolio. Wide landscape 1.91:1 composition, ideally 1200 x 630.
+Background: perfectly flat near-black #0a0a0a. Palette: black, off-white and restrained neutral gray ONLY.
+Design: confident clean geometric sans-serif typography inspired by Poppins, generous but purposeful spacing, precise left alignment, one extremely subtle gray hairline. A small "PORTFOLIO." label above a large bold "Abdelhamed Nada"; smaller "Full-Stack Developer" underneath. Small website address "abdelhamed-nada.vercel.app" near the bottom. A professional restrained website identity with typography doing all the work.
+Text verbatim: "PORTFOLIO.", "Abdelhamed Nada", "Full-Stack Developer", "abdelhamed-nada.vercel.app".
+All text comfortably inset at least 10% from edges, name fully readable. Flat graphic design, immaculate typography, no decorative illustration.
+Avoid: logos or monograms, A/N symbols, colors, gradients, glow, glass, metallic materials, 3D, floating objects, abstract shapes, futuristic AI visuals, robots, device mockups, fake UI cards, ornamental serif type, photos, people, watermarks, extra text.
