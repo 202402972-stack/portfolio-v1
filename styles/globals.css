@@ -157,6 +157,7 @@ html {
 }
 
 /* Keep black brand marks visible on the dark theme. */
+.dark .tech-icon-img[src$="/express.svg"],
 .dark .tech-icon-img[src$="/github.svg"],
 .dark .tech-icon-img[src$="/nextjs.svg"],
 .dark .tech-icon-img[src$="/vercel.svg"],

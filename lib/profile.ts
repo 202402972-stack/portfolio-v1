@@ -21,7 +21,7 @@ export const techCategories = [
       },
       {
         "name": "SQL",
-        "svg": ""
+        "svg": "/icons/sql.svg"
       },
       {
         "name": "HTML5",
@@ -68,6 +68,38 @@ export const techCategories = [
       {
         "name": "WebGL",
         "svg": "/icons/webgl-glsl.svg"
+      },
+      {
+        "name": "Framer Motion",
+        "svg": "/icons/framermotion.svg"
+      },
+      {
+        "name": "React Three Fiber",
+        "svg": "/icons/react-three-fiber.svg"
+      },
+      {
+        "name": "Glassmorphism",
+        "svg": "/icons/glassmorphism.svg"
+      },
+      {
+        "name": "GSAP",
+        "svg": "/icons/gsap.svg"
+      },
+      {
+        "name": "Lenis",
+        "svg": "/icons/lenis.svg"
+      },
+      {
+        "name": "Vite",
+        "svg": "/icons/vite.svg"
+      },
+      {
+        "name": "DOMPurify",
+        "svg": "/icons/dompurify.svg"
+      },
+      {
+        "name": "shadcn/ui",
+        "svg": "/icons/shadcn-ui.svg"
       }
     ]
   },
@@ -81,7 +113,7 @@ export const techCategories = [
       },
       {
         "name": "Express",
-        "svg": ""
+        "svg": "/icons/express.svg"
       },
       {
         "name": "REST APIs",
@@ -101,7 +133,15 @@ export const techCategories = [
       },
       {
         "name": "Drizzle ORM",
-        "svg": ""
+        "svg": "/icons/drizzle.svg"
+      },
+      {
+        "name": "mail.tm API",
+        "svg": "/icons/mail-tm.svg"
+      },
+      {
+        "name": "Cryptography",
+        "svg": "/icons/cryptography.svg"
       }
     ]
   },
@@ -111,19 +151,19 @@ export const techCategories = [
     "technologies": [
       {
         "name": "LLM APIs",
-        "svg": ""
+        "svg": "/icons/llm-api.svg"
       },
       {
         "name": "NanoBot",
-        "svg": ""
+        "svg": "/icons/nanobot.svg"
       },
       {
         "name": "LiteLLM",
-        "svg": ""
+        "svg": "/icons/litellm.svg"
       },
       {
         "name": "Playwright",
-        "svg": ""
+        "svg": "/icons/playwright.svg"
       },
       {
         "name": "Telegram bots",
@@ -131,7 +171,15 @@ export const techCategories = [
       },
       {
         "name": "asyncio",
-        "svg": ""
+        "svg": "/icons/asyncio.svg"
+      },
+      {
+        "name": "python-telegram-bot",
+        "svg": "/icons/python-telegram-bot.svg"
+      },
+      {
+        "name": "PyGithub",
+        "svg": "/icons/pygithub.svg"
       }
     ]
   },
@@ -141,15 +189,15 @@ export const techCategories = [
     "technologies": [
       {
         "name": "OAuth",
-        "svg": ""
+        "svg": "/icons/oauth.svg"
       },
       {
         "name": "Stripe",
-        "svg": ""
+        "svg": "/icons/stripe.svg"
       },
       {
         "name": "Paymob",
-        "svg": ""
+        "svg": "/icons/paymob.svg"
       },
       {
         "name": "Git",
@@ -170,6 +218,22 @@ export const techCategories = [
       {
         "name": "Railway",
         "svg": "/icons/railway.svg"
+      },
+      {
+        "name": "GitHub",
+        "svg": "/icons/github.svg"
+      },
+      {
+        "name": "Netlify",
+        "svg": "/icons/netlify.svg"
+      },
+      {
+        "name": "Cursor AI",
+        "svg": "/icons/cursor.svg"
+      },
+      {
+        "name": "GitHub Copilot",
+        "svg": "/icons/githubcopilot.svg"
       }
     ]
   }
