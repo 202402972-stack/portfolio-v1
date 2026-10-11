@@ -7,7 +7,7 @@ import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import ProjectGallery from "@/components/ProjectGallery"
 import { getProject, projectList } from "@/lib/projects"
-import { siteUrl, socialImage } from "@/lib/site"
+import { siteUrl } from "@/lib/site"
 
 type Props = { params: Promise<{ slug: string }> }
 export const dynamicParams = false
@@ -30,9 +30,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `/projects/${project.slug}`,
       locale: "en_US",
       siteName: "Abdelhamed Nada Portfolio",
-      images: [socialImage, { url: project.imagePath, width: project.imageWidth, height: project.imageHeight, alt: project.title }],
+      images: [{ url: project.imagePath, width: project.imageWidth, height: project.imageHeight, alt: project.title }],
     },
-    twitter: { card: "summary_large_image", title: project.title, description: project.shortDescription, images: [socialImage] },
+    twitter: { card: "summary_large_image", title: project.title, description: project.shortDescription, images: [project.imagePath] },
   }
 }
 
@@ -47,7 +47,7 @@ export default async function ProjectPage({ params }: Props) {
   const project = getProject((await params).slug)
   if (!project) notFound()
   const sources = project.sourceLinks || [{ label: "Source Code", url: project.githubUrl }]
-  const screens = [{ src: project.imagePath, alt: "home screen", caption: "Home — project overview", width: project.imageWidth, height: project.imageHeight }, ...project.gallery]
+  const screens = project.includeCoverInGallery === false ? project.gallery : [{ src: project.imagePath, alt: `${project.title} overview`, caption: project.imageCaption || "Home — project overview", width: project.imageWidth, height: project.imageHeight }, ...project.gallery]
   const position = projectList.findIndex((item) => item.slug === project.slug)
   const nextProject = projectList[(position + 1) % projectList.length]
   const baseUrl = siteUrl
@@ -67,10 +67,12 @@ export default async function ProjectPage({ params }: Props) {
           {project.liveDemoUrl ? <a href={project.liveDemoUrl} target="_blank" rel="noopener noreferrer" className="bg-text-primary text-background px-6 py-3 rounded-xl text-sm font-bold hover:opacity-80">Visit live website ↗</a> : <span aria-label="Live website: Not Available" className="bg-text-primary text-background px-6 py-3 rounded-xl text-sm font-bold opacity-50">Not Available</span>}
           {project.isPrivateRepo ? <span aria-label="Source Code: Not Available" className="border border-text-secondary/20 text-text-secondary px-6 py-3 rounded-xl text-sm font-bold">Not Available</span> : sources.map((source) => <a key={source.url} href={source.url} target="_blank" rel="noopener noreferrer" className="border border-text-secondary/20 text-text-primary px-6 py-3 rounded-xl text-sm font-bold hover:border-text-primary">{source.label} ↗</a>)}
         </div>
+        {project.previewNotice && <p className="mt-4 text-sm text-text-secondary">{project.previewNotice}</p>}
       </div>
       <div className="mt-12 md:mt-16 rounded-2xl overflow-hidden border border-text-secondary/20 bg-thirdary/20">
-        <Image src={project.imagePath} alt={`${project.title} home screen`} width={project.imageWidth} height={project.imageHeight} sizes="(max-width: 1280px) 100vw, 1152px" priority className="w-full h-auto" />
+        <Image src={project.imagePath} alt={`${project.title} interface overview`} width={project.imageWidth} height={project.imageHeight} sizes="(max-width: 1280px) 100vw, 1152px" priority className="w-full h-auto" />
       </div>
+      {project.imageCaption && <p className="mt-3 text-xs text-text-secondary">{project.imageCaption}</p>}
       <nav aria-label="Case study sections" className="flex flex-wrap gap-x-6 gap-y-3 py-6 text-sm font-bold text-text-secondary">
         <a href="#overview" className="hover:text-text-primary">Overview</a>
         <a href="#features" className="hover:text-text-primary">Features</a>

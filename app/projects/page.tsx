@@ -35,7 +35,7 @@ export default function ProjectsPage() {
       <div className="mt-10 mb-12 md:mb-16">
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-text-secondary mb-4">{projectList.length} selected projects</p>
         <h1 className="text-4xl md:text-6xl font-black tracking-tighter">Projects, in detail.</h1>
-        <p className="max-w-2xl text-text-secondary mt-6 leading-relaxed">Explore the thinking, technology, and visual details behind each project. Every card opens a full case study with screenshots and links to the live experience.</p>
+        <p className="max-w-2xl text-text-secondary mt-6 leading-relaxed">Explore the thinking, technology, and visual details behind each project. Every card opens a full case study with screenshots, capabilities, and available project links.</p>
       </div>
       <ProjectCards />
     </main>

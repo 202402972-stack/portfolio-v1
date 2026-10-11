@@ -1,3 +1,5 @@
+import { commerceProjects } from "./commerce-projects"
+
 export interface ProjectItem {
   slug: string
   imageWidth: number
@@ -7,6 +9,9 @@ export interface ProjectItem {
   title: string
   shortDescription: string
   description: string
+  imageCaption?: string
+  includeCoverInGallery?: boolean
+  previewNotice?: string
   role?: string
   gallery: { src: string; alt: string; caption?: string; width: number; height: number }[]
   createdAt: string
@@ -20,7 +25,7 @@ export interface ProjectItem {
   liveDemoUrl: string
   isPrivateRepo: boolean
 }
-export const projectList: ProjectItem[] = [
+const existingProjects: ProjectItem[] = [
   {
     index: 0,
     slug: "newabdate-performance",
@@ -277,6 +282,12 @@ export const projectList: ProjectItem[] = [
     isPrivateRepo: false,
   },
 ]
+
+export const projectList: ProjectItem[] = [
+  ...commerceProjects,
+  ...existingProjects.filter((project) => project.slug === "green-webgl"),
+  ...existingProjects.filter((project) => project.slug !== "green-webgl"),
+].map((project, index) => ({ ...project, index }))
 
 export function getProject(slug: string) {
   return projectList.find((project) => project.slug === slug)
