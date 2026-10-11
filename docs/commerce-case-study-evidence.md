@@ -19,13 +19,13 @@ All final assets are optimized WebP files under `public/images/projects/`.
 
 | Entry | Asset | Origin |
 | --- | --- | --- |
-| VÉRA | `vera/01.webp` | AI interface illustration using three actual platform screenshots as references |
+| VÉRA | `vera/cover-original.webp` | Actual platform landing screenshot; replaces the initial AI cover |
 | VÉRA | `vera/02.webp`–`05.webp` | Locally captured landing, template gallery, merchant workspace, and onboarding |
-| Merchant Studio | `merchant-studio/01.webp` | AI interface illustration using original green dashboard, brand studio, and login previews |
+| Merchant Studio | `merchant-studio/cover-original.webp` | Original user-supplied flat desktop login image; replaces the initial AI cover |
 | Merchant Studio | `merchant-studio/02.webp` | Source `previews/boutique-dashboard.png` |
 | Merchant Studio | `merchant-studio/03.webp` | Source `previews/boutique-brand-studio.png` |
 | Merchant Studio | `merchant-studio/04.webp` | AI login illustration based on source `previews/login-desktop.png` and the user’s flat desktop login reference |
-| Merchant Studio | `merchant-studio/05.webp` | Source `previews/dashboard-scrolled-ar.png` |
+| Merchant Studio | `merchant-studio/mobile-triptych.webp` | AI-generated three-phone presentation based on the user’s three-phone reference |
 | MAISON VERE | `maison-vere/01.webp` | AI interface illustration using actual home/catalog captures and the user's supplied visual reference |
 | MAISON VERE | `maison-vere/02.webp`–`05.webp` | Locally captured home, catalog, product detail, and dedicated design studio |
 
@@ -33,4 +33,6 @@ Local capture used synthetic accounts and seeded catalog fixtures. Captures cont
 
 MAISON VERE's source documents a Banzena editorial reference and product/photo origins. The portfolio describes storefront implementation and customization without claiming exclusive authorship of the reference design or photography. Refer to the source's reference audit and existing asset notices for provenance; AI illustrations are distinguished from actual application screenshots in visible captions.
 
-All covers are flat interface compositions without physical device mockups. VÉRA has exactly one generated cover and four real gallery views. Source/live links are disabled for the three entries, with a temporary live-preview notice. Existing project records and galleries are preserved; `green-webgl` follows the three new case studies.
+VÉRA uses an actual landing screenshot as its cover and four actual gallery views. Merchant Studio uses the supplied login cover and a generated three-phone gallery presentation. MAISON VERE retains its flat cover and now has an additional generated three-phone gallery presentation. The two tall Merchant Studio captures use bounded, proportional top-aligned thumbnails; original full images remain available in the viewer. Source/live links are disabled for the three entries, with a temporary live-preview notice. Existing project records and galleries are preserved; `green-webgl` follows the three new case studies.
+
+Revision: generated three-phone Maison presentation is stored in `maison-vere/06.webp`.

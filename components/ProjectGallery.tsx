@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 
-type Screen = { src: string; alt: string; caption?: string; width: number; height: number }
+type Screen = { src: string; alt: string; caption?: string; previewAspectRatio?: string; width: number; height: number }
 
 export default function ProjectGallery({ title, screens }: { title: string; screens: Screen[] }) {
   const dialog = useRef<HTMLDialogElement>(null)
@@ -31,8 +31,8 @@ export default function ProjectGallery({ title, screens }: { title: string; scre
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {screens.map((item, index) => (
           <figure key={item.src}>
-            <button onClick={() => open(index)} aria-label={`Enlarge ${title}: ${item.alt}`} className="group block relative w-full rounded-2xl overflow-hidden border border-text-secondary/20 bg-thirdary/20 hover:border-text-primary/50 focus-visible:outline-2 focus-visible:outline-text-primary">
-              <Image src={item.src} alt={`${title} — ${item.alt}`} width={item.width} height={item.height} sizes="(max-width: 768px) 100vw, 50vw" className="w-full h-auto" />
+            <button onClick={() => open(index)} aria-label={`Enlarge ${title}: ${item.alt}`} style={item.previewAspectRatio ? { aspectRatio: item.previewAspectRatio } : undefined} className="group block relative w-full rounded-2xl overflow-hidden border border-text-secondary/20 bg-thirdary/20 hover:border-text-primary/50 focus-visible:outline-2 focus-visible:outline-text-primary">
+              <Image src={item.src} alt={`${title} — ${item.alt}`} width={item.width} height={item.height} sizes="(max-width: 768px) 100vw, 50vw" className={item.previewAspectRatio ? "w-full h-full object-cover object-top" : "w-full h-auto"} />
               <span className="absolute bottom-3 right-3 rounded-full px-3 py-1 bg-background/90 text-text-primary text-xs font-bold backdrop-blur-md">Enlarge ↗</span>
             </button>
             <figcaption className="mt-3 text-sm text-text-secondary leading-relaxed">{item.caption || item.alt}</figcaption>

@@ -4,16 +4,16 @@ export const commerceProjects: ProjectItem[] = [
   {
     "slug": "vera",
     "index": 0,
-    "imagePath": "/images/projects/vera/01.webp",
-    "imageWidth": 1536,
-    "imageHeight": 1024,
+    "imagePath": "/images/projects/vera/cover-original.webp",
+    "imageWidth": 1440,
+    "imageHeight": 1000,
     "title": "VÉRA Commerce — Store-Building Platform",
     "shortDescription": "A bilingual commerce platform for creating, customizing, migrating, and operating independent online stores.",
     "description": "VÉRA is a full-stack commerce platform covering the journey from choosing a visual direction to running a published store. Merchants sign in, build a store through resumable onboarding, customize its identity, and manage products, orders, customers, and payments. A separate owner console handles platform operations and subscriptions. The implementation includes three storefront templates, isolated store data, staged catalog migration, publishing checks, and optional provider integrations. Gallery captures use local demonstration accounts and catalog fixtures; they do not represent customer revenue or production payment activity.",
     "role": "Full-Stack Developer",
     "createdAt": "2026",
     "includeCoverInGallery": false,
-    "imageCaption": "AI-generated interface illustration, based on the project’s actual screens.",
+    "imageCaption": "VÉRA landing page — actual application screenshot.",
     "previewNotice": "Live preview is temporarily unavailable.",
     "gallery": [
       {
@@ -149,21 +149,22 @@ export const commerceProjects: ProjectItem[] = [
     ],
     "githubUrl": "",
     "liveDemoUrl": "",
-    "isPrivateRepo": true
+    "isPrivateRepo": true,
+    "coverFit": "contain"
   },
   {
     "slug": "merchant-studio",
     "index": 0,
-    "imagePath": "/images/projects/merchant-studio/01.webp",
-    "imageWidth": 1536,
-    "imageHeight": 1024,
+    "imagePath": "/images/projects/merchant-studio/cover-original.webp",
+    "imageWidth": 1280,
+    "imageHeight": 888,
     "title": "Merchant Studio — E-Commerce Dashboard",
     "shortDescription": "A forest-green merchant dashboard for products, orders, brand customization, customers, and store performance.",
     "description": "Merchant Studio presents store management through a quiet forest-green and ivory interface with serif typography, clear operational priorities, and responsive Arabic/English layouts. Its overview surfaces orders needing attention, low inventory, and notification problems, while dedicated workspaces handle the catalog, brand identity, commerce settings, and customer service. This case study focuses on the dashboard experience and its server-backed operations. Screens include original project preview assets; empty states and demonstration inventory are shown without invented sales results.",
     "role": "Full-Stack Developer",
     "createdAt": "2026",
     "includeCoverInGallery": false,
-    "imageCaption": "AI-generated interface illustration, based on the project’s actual screens.",
+    "imageCaption": "Private merchant login — original image supplied for this project.",
     "previewNotice": "Live preview is temporarily unavailable.",
     "gallery": [
       {
@@ -171,14 +172,16 @@ export const commerceProjects: ProjectItem[] = [
         "alt": "Green dashboard — overview, inventory watch, and order empty state.",
         "caption": "Green dashboard — overview, inventory watch, and order empty state.",
         "width": 1440,
-        "height": 2011
+        "height": 2011,
+        "previewAspectRatio": "1440 / 1000"
       },
       {
         "src": "/images/projects/merchant-studio/03.webp",
         "alt": "Brand studio — identity and storefront customization.",
         "caption": "Brand studio — identity and storefront customization.",
         "width": 1440,
-        "height": 1981
+        "height": 1981,
+        "previewAspectRatio": "1440 / 1000"
       },
       {
         "src": "/images/projects/merchant-studio/04.webp",
@@ -188,11 +191,11 @@ export const commerceProjects: ProjectItem[] = [
         "height": 1024
       },
       {
-        "src": "/images/projects/merchant-studio/05.webp",
-        "alt": "Arabic mobile dashboard — responsive RTL interface.",
-        "caption": "Arabic mobile dashboard — responsive RTL interface.",
-        "width": 390,
-        "height": 844
+        "src": "/images/projects/merchant-studio/mobile-triptych.webp",
+        "alt": "Three-phone mobile presentation — AI-generated interface illustration.",
+        "caption": "Three-phone mobile presentation — AI-generated interface illustration.",
+        "width": 1536,
+        "height": 1024
       }
     ],
     "features": [
@@ -268,7 +271,7 @@ export const commerceProjects: ProjectItem[] = [
       },
       {
         "title": "Preview provenance",
-        "description": "The gallery preserves original green dashboard preview screens, including its Arabic mobile view. The cover is an AI-generated presentation of that interface."
+        "description": "The gallery preserves original green dashboard preview screens. Tall captures use compact previews and remain available in full in the image viewer. The cover is the original supplied login image."
       }
     ],
     "security": [
@@ -294,7 +297,8 @@ export const commerceProjects: ProjectItem[] = [
     ],
     "githubUrl": "",
     "liveDemoUrl": "",
-    "isPrivateRepo": true
+    "isPrivateRepo": true,
+    "coverFit": "contain"
   },
   {
     "slug": "maison-vere",
@@ -338,6 +342,13 @@ export const commerceProjects: ProjectItem[] = [
         "caption": "Dedicated design studio — storefront configuration and live preview.",
         "width": 1440,
         "height": 1000
+      },
+      {
+        "src": "/images/projects/maison-vere/06.webp",
+        "alt": "Three-phone mobile presentation — AI-generated interface illustration.",
+        "caption": "Three-phone mobile presentation — AI-generated interface illustration.",
+        "width": 1536,
+        "height": 1024
       }
     ],
     "features": [

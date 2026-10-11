@@ -9,11 +9,12 @@ export interface ProjectItem {
   title: string
   shortDescription: string
   description: string
+  coverFit?: "contain" | "cover"
   imageCaption?: string
   includeCoverInGallery?: boolean
   previewNotice?: string
   role?: string
-  gallery: { src: string; alt: string; caption?: string; width: number; height: number }[]
+  gallery: { src: string; alt: string; caption?: string; previewAspectRatio?: string; width: number; height: number }[]
   createdAt: string
   features: (string | { title: string; description: string })[]
   architecture?: { title: string; description: string }[]

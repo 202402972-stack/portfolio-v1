@@ -9,7 +9,7 @@ export default function ProjectCard({ project, duplicate = false }: { project: P
     <GlareHover className="group flex flex-col h-full bg-background border border-text-secondary/20 hover:border-text-primary/50 rounded-xl overflow-hidden transition-all duration-500 shadow-sm hover:shadow-2xl">
                 <Link href={`/projects/${project.slug}`} tabIndex={duplicate ? -1 : 0} aria-label={`View project: ${project.title}`} className="absolute inset-0 z-20 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-text-primary" />
                 <div className="relative overflow-hidden aspect-[16/10] bg-text-secondary/5 border-b border-text-secondary/10">
-                  <Image src={project.imagePath} alt={project.title} fill sizes="(max-width: 640px) 85vw, 400px" className="object-cover transition-all duration-700 group-hover:scale-105" />
+                  <Image src={project.imagePath} alt={project.title} fill sizes="(max-width: 640px) 85vw, 400px" className={`${project.coverFit === "contain" ? "object-contain" : "object-cover"} transition-all duration-700 group-hover:scale-105`} />
 
                   {/* Tech Stack Overlay */}
                   <div className="absolute top-4 right-4 flex flex-wrap gap-2 justify-end z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-[-10px] group-hover:translate-y-0">
