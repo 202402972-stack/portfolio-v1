@@ -3,6 +3,7 @@ import localFont from "next/font/local"
 import "../styles/globals.css"
 import PageLoader from "@/components/PageLoader"
 import { siteUrl, socialImage } from "@/lib/site"
+import { profileDescription } from "@/lib/profile"
 
 const poppins = localFont({
   src: [
@@ -15,15 +16,15 @@ const poppins = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: "Abdelhamed Nada | Portfolio", template: "%s | Abdelhamed Nada" },
-  description: "Abdelhamed Nada builds bilingual web apps, WebGL interfaces, a live temporary inbox, and GitHub automation with React, TypeScript, and Python.",
-  keywords: ["Abdelhamed Nada", "Portfolio", "Frontend Developer", "Full-Stack Developer", "React", "Next.js", "TypeScript", "TanStack Start", "Three.js", "WebGL", "GLSL", "Python", "Telegram Bot API", "Glassmorphism"],
+  description: profileDescription,
+  keywords: ["Abdelhamed Nada", "Portfolio", "Full-Stack Developer", "E-Commerce SaaS", "React", "Next.js", "TypeScript", "Python", "REST APIs", "PostgreSQL", "Stripe", "Paymob", "LLM", "Playwright", "WebGL"],
   authors: [{ name: "Abdelhamed Nada" }],
   creator: "Abdelhamed Nada",
   openGraph: {
     type: "website",
     locale: "en_US",
     title: "Abdelhamed Nada | Portfolio",
-    description: "Bilingual web apps, glassmorphic WebGL interfaces, and Python developer automation.",
+    description: profileDescription,
     siteName: "Abdelhamed Nada Portfolio",
     images: [socialImage],
   },
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Abdelhamed Nada | Portfolio",
-    description: "Bilingual web apps, glassmorphic WebGL interfaces, and Python developer automation.",
+    description: profileDescription,
     images: [socialImage],
   },
 }

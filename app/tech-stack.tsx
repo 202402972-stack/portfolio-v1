@@ -1,6 +1,7 @@
 "use client"
 import FadeDown from "@/components/animations/FadeDown"
 import FadeUp from "@/components/animations/FadeUp"
+import { techCategories } from "@/lib/profile"
 
 export default function TechStack() {
   return (
@@ -47,70 +48,3 @@ export default function TechStack() {
     </section>
   )
 }
-
-const techCategories = [
-  {
-    title: "Frontend",
-    description: "Bilingual interfaces, glassmorphism, 3D rendering, and accessible motion.",
-    technologies: [
-      { name: "React.js", svg: "./icons/react.svg" },
-      { name: "Next.js", svg: "./icons/nextjs.svg" },
-      { name: "TypeScript", svg: "./icons/typescript.svg" },
-      { name: "JavaScript", svg: "./icons/javascript.svg" },
-      { name: "Tailwind CSS", svg: "./icons/tailwindcss.svg" },
-      { name: "HTML5", svg: "./icons/html.svg" },
-      { name: "CSS3", svg: "./icons/css.svg" },
-      { name: "Framer Motion", svg: "./icons/framermotion.svg" },
-      { name: "TanStack Start", svg: "./icons/tanstack-start.svg" },
-      { name: "Three.js", svg: "./icons/threejs.svg" },
-      { name: "React Three Fiber", svg: "./icons/react-three-fiber.svg" },
-      { name: "WebGL / GLSL", svg: "./icons/webgl-glsl.svg" },
-      { name: "Glassmorphism", svg: "./icons/glassmorphism.svg" },
-      { name: "GSAP", svg: "./icons/gsap.svg" },
-      { name: "Lenis", svg: "./icons/lenis.svg" },
-      { name: "Vite", svg: "./icons/vite.svg" },
-      { name: "TanStack Query", svg: "./icons/tanstack-query.svg" },
-      { name: "Zustand", svg: "./icons/zustand.svg" },
-      { name: "DOMPurify", svg: "./icons/dompurify.svg" },
-      { name: "shadcn/ui", svg: "./icons/shadcn-ui.svg" },
-    ],
-  },
-  {
-    title: "Backend",
-    description: "Server-side API integration, temporary email, and Telegram automation.",
-    technologies: [
-      { name: "Node.js", svg: "./icons/nodejs.svg" },
-      { name: "Python", svg: "./icons/python.svg" },
-      { name: "REST APIs", svg: "./icons/rest-api.svg" },
-      { name: "mail.tm API", svg: "./icons/mail-tm.svg" },
-      { name: "Telegram Bot API", svg: "./icons/telegram-bot.svg" },
-      { name: "python-telegram-bot", svg: "./icons/python-telegram-bot.svg" },
-      { name: "PyGithub", svg: "./icons/pygithub.svg" },
-      { name: "Cryptography", svg: "./icons/cryptography.svg" },
-    ],
-  },
-  {
-    title: "Databases & ORM",
-    description: "Persistent data and encrypted per-user credential storage.",
-    technologies: [
-      { name: "PostgreSQL", svg: "./icons/postgresql.svg" },
-      { name: "Supabase", svg: "./icons/supabase.svg" },
-      { name: "SQLite", svg: "./icons/sqlite.svg" },
-    ],
-  },
-  {
-    title: "Tools & Infrastructure",
-    description: "Version control, containerized services, and web deployment.",
-    technologies: [
-      { name: "Git", svg: "./icons/git.svg" },
-      { name: "GitHub", svg: "./icons/github.svg" },
-      { name: "GitHub Actions", svg: "./icons/githubactions.svg" },
-      { name: "Vercel", svg: "./icons/vercel.svg" },
-      { name: "Netlify", svg: "./icons/netlify.svg" },
-      { name: "Cursor AI", svg: "./icons/cursor.svg" },
-      { name: "GitHub Copilot", svg: "./icons/githubcopilot.svg" },
-      { name: "Docker", svg: "./icons/docker.svg" },
-      { name: "Railway", svg: "./icons/railway.svg" },
-    ],
-  },
-]

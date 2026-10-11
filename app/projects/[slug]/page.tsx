@@ -64,8 +64,8 @@ export default async function ProjectPage({ params }: Props) {
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter leading-tight">{project.title}</h1>
         <p className="mt-6 text-lg text-text-secondary leading-relaxed max-w-3xl">{project.shortDescription}</p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <a href={project.liveDemoUrl} target="_blank" rel="noopener noreferrer" className="bg-text-primary text-background px-6 py-3 rounded-xl text-sm font-bold hover:opacity-80">Visit live website ↗</a>
-          {!project.isPrivateRepo && sources.map((source) => <a key={source.url} href={source.url} target="_blank" rel="noopener noreferrer" className="border border-text-secondary/20 text-text-primary px-6 py-3 rounded-xl text-sm font-bold hover:border-text-primary">{source.label} ↗</a>)}
+          {project.liveDemoUrl ? <a href={project.liveDemoUrl} target="_blank" rel="noopener noreferrer" className="bg-text-primary text-background px-6 py-3 rounded-xl text-sm font-bold hover:opacity-80">Visit live website ↗</a> : <span aria-label="Live website: Not Available" className="bg-text-primary text-background px-6 py-3 rounded-xl text-sm font-bold opacity-50">Not Available</span>}
+          {project.isPrivateRepo ? <span aria-label="Source Code: Not Available" className="border border-text-secondary/20 text-text-secondary px-6 py-3 rounded-xl text-sm font-bold">Not Available</span> : sources.map((source) => <a key={source.url} href={source.url} target="_blank" rel="noopener noreferrer" className="border border-text-secondary/20 text-text-primary px-6 py-3 rounded-xl text-sm font-bold hover:border-text-primary">{source.label} ↗</a>)}
         </div>
       </div>
       <div className="mt-12 md:mt-16 rounded-2xl overflow-hidden border border-text-secondary/20 bg-thirdary/20">

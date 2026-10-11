@@ -1,5 +1,6 @@
 "use client"
 import { projectList } from "@/lib/projects"
+import { professionalSummary, techCategories } from "@/lib/profile"
 import { useState, useEffect, useCallback, useRef } from "react"
 import AlertMessage from "@/components/Alert"
 import FadeDown from "@/components/animations/FadeDown"
@@ -74,7 +75,7 @@ export default function Contact() {
       {
         id: "welcome-msg",
         sender: "bot",
-        text: "Hi! I’m Abdelhamed Nada’s portfolio assistant. Ask me about his skills, education, or how to get in touch. Explore his projects, technologies, and live websites.",
+        text: "Hi! I’m Abdelhamed Nada’s portfolio assistant. Ask me about his skills, education, or how to get in touch. Explore his projects, technologies, and current CV.",
         timestamp: new Date()
       }
     ])
@@ -112,8 +113,11 @@ export default function Contact() {
       {
         role: "system" as const,
         content: `You are the portfolio assistant for Abdelhamed Nada. Answer in the visitor's language, clearly and briefly. Use only these verified details:
-Name: Abdelhamed Nada. Role: Full-Stack Developer, Frontend Specialist, WebGL Developer. Based in Egypt and open to remote work.
-Current project capabilities: bilingual Arabic/English interfaces, RTL, glassmorphism, WebGL/GLSL, adaptive rendering, accessible motion, server-side API integration, sanitized email HTML, encrypted credentials, and Telegram repository automation. Skills: React, TypeScript, TanStack Start, Next.js, Tailwind CSS, React Three Fiber, Three.js, GLSL, GSAP, Lenis, Vite, Zustand, TanStack Query, Framer Motion, DOMPurify, mail.tm API, Python, python-telegram-bot, PyGithub, cryptography, SQLite, shadcn/ui, Git, Docker, Railway, and Vercel. Additional CV skills: JavaScript, HTML, CSS, Node.js, Supabase, PostgreSQL, GitHub Actions, Netlify, and AI-assisted development. Project records are the current source of truth for technical capabilities; the older CV supplies education and personal details.
+Name: Abdelhamed Nada. Role: Full-Stack Developer. Based in Egypt and open to remote work.
+Current CV summary: ${professionalSummary}
+Current CV skills: ${techCategories.map((category) => `${category.title}: ${category.technologies.map((tech) => tech.name).join(", ")}`).join("; ")}.
+CV engineering work: e-commerce SaaS with React storefronts, Arabic/English layouts, tenant-scoped SQLite, Google OAuth with PKCE, and Paymob subscriptions; Next.js storefronts with Supabase/PostgreSQL, Drizzle ORM, Stripe Checkout, signature-verified idempotent webhooks, and transactional orders; NanoBot-based Python agents with Playwright browser tools, LLM APIs, Telegram, and Docker. These are CV capabilities; do not invent portfolio pages or links for them.
+Languages: Arabic (Native), English (Professional). The current CV is the source of truth for professional skills, education, and personal details; published project records describe the existing case studies.
 Education: Computer Science & Artificial Intelligence at Tanta University, 2024–present; foundational Computer Science studies at Pharos University in Alexandria, 2022–2024.
 Contact: dior53634@gmail.com; WhatsApp +20 109 614 4345; GitHub github.com/abbn7; LinkedIn https://www.linkedin.com/in/abdelhamed-nada-030528324/.
 Published projects: ${JSON.stringify(projectList.map((project) => ({ title: project.title, description: project.description, technologies: project.tech, page: `/projects/${project.slug}`, live: project.liveDemoUrl, repositories: project.sourceLinks || [{ url: project.githubUrl }] })))}. Do not invent additional projects, past employers, dates, achievements, social accounts, or a personal photo. If asked for missing details, invite the visitor to contact Abdelhamed directly.`

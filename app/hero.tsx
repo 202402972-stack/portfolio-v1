@@ -1,5 +1,6 @@
 "use client"
 import ProfileHighlights from "@/components/ProfileHighlights"
+import { professionalSummary } from "@/lib/profile"
 import { useEffect, useState, useMemo } from "react"
 import FadeRight from "@/components/animations/FadeRight"
 import FadeLeft from "@/components/animations/FadeLeft"
@@ -9,7 +10,7 @@ export default function Hero() {
   const [subIndex, setSubIndex] = useState(0)
   const [deleting, setDeleting] = useState(false)
 
-  const texts = useMemo(() => ["Full-Stack Developer", "Frontend Specialist", "WebGL Developer"], [])
+  const texts = useMemo(() => ["Full-Stack Developer", "E-Commerce SaaS Developer", "Python & AI Automation"], [])
 
   const handleScroll = (id: string) => {
     const section = document.getElementById(id)
@@ -63,7 +64,7 @@ export default function Hero() {
             </div>
 
             <div className="max-w-xl mt-4">
-              <p className="text-text-secondary text-base md:text-lg leading-relaxed font-medium">I build bilingual web applications, interactive 3D interfaces, and developer automation. My work combines React, TypeScript, TanStack Start, and Next.js with WebGL, real APIs, and Python.</p>
+              <p className="text-text-secondary text-base md:text-lg leading-relaxed font-medium">{professionalSummary}</p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 mt-8">
@@ -143,7 +144,7 @@ const quickStatsList = [
     ),
   },
   {
-    message: "WebGL & Automation",
+    message: "E-Commerce & APIs",
     icon: (
       <svg className="w-5 md:w-6 text-text-background" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
         <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m8 8-4 4 4 4m8 0 4-4-4-4m-2-3-4 14" />
@@ -151,7 +152,7 @@ const quickStatsList = [
     ),
   },
   {
-    message: "Frontend Specialist",
+    message: "Python & AI Automation",
     icon: (
       <svg className="w-5 md:w-6 text-text-background" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
         <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 12V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v5M5 12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2M5 12h14m-7 4v3m-4 0h8" />

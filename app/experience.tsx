@@ -18,7 +18,7 @@ const experiences: ExperienceItem[] = [
     company: "Tanta University",
     role: "B.Sc. Computer Science & Artificial Intelligence",
     date: "2024 – Present",
-    description: "Studying Computer Science with a specialization track in Artificial Intelligence.",
+    description: "Pursuing a B.Sc. in Computer Science and Artificial Intelligence at Tanta University.",
     skills: ["Computer Science", "Artificial Intelligence"],
   },
   {
@@ -26,8 +26,8 @@ const experiences: ExperienceItem[] = [
     company: "Pharos University in Alexandria",
     role: "Computer Science Studies",
     date: "2022 – 2024",
-    description: "Completed foundational studies in Computer Science, including algorithms and software engineering.",
-    skills: ["Algorithms", "Software Engineering"],
+    description: "Studied Computer Science at Pharos University in Alexandria from 2022 to 2024.",
+    skills: ["Computer Science"],
   },
 ]
 

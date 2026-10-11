@@ -38,11 +38,11 @@ export default function ProjectCard({ project, duplicate = false }: { project: P
                       <span className="w-8 h-[2px] bg-text-primary group-hover/btn:w-12 transition-all duration-300"></span>
                     </span>
 
-                    <a tabIndex={duplicate ? -1 : 0} aria-label={`Open ${project.title} live website`} href={project.liveDemoUrl} target="_blank" rel="noopener noreferrer" className="relative z-30 p-2 border border-text-secondary/20 rounded-full text-text-secondary hover:text-background hover:bg-text-primary hover:border-text-primary transition-all duration-300">
+                    {project.liveDemoUrl ? <a tabIndex={duplicate ? -1 : 0} aria-label={`Open ${project.title} live website`} href={project.liveDemoUrl} target="_blank" rel="noopener noreferrer" className="relative z-30 p-2 border border-text-secondary/20 rounded-full text-text-secondary hover:text-background hover:bg-text-primary hover:border-text-primary transition-all duration-300">
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
-                    </a>
+                    </a> : <span className="relative z-30 text-xs text-text-secondary">Not Available</span>}
                   </div>
                 </div>
               </GlareHover>

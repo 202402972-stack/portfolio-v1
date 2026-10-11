@@ -8,6 +8,7 @@ import Project from "./project"
 import Contact from "./contact"
 import type { Metadata } from "next"
 import { siteUrl, socialImage } from "@/lib/site"
+import { profileDescription } from "@/lib/profile"
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     title: "Abdelhamed Nada | Portfolio",
-    description: "Bilingual web apps, glassmorphic WebGL interfaces, and Python developer automation.",
+    description: profileDescription,
     siteName: "Abdelhamed Nada Portfolio",
     url: siteUrl,
     images: [socialImage],

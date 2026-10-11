@@ -3,6 +3,7 @@ import FadeDown from "@/components/animations/FadeDown"
 import Fade from "@/components/animations/Fade"
 import FadeLeft from "@/components/animations/FadeLeft"
 import ProfileMark from "@/components/ProfileMark"
+import { professionalSummary } from "@/lib/profile"
 
 export default function About() {
   const velocity = 50
@@ -20,10 +21,10 @@ export default function About() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 px-6 md:px-12">
           
           <div className="lg:col-span-5 hidden lg:flex flex-col items-center lg:items-center justify-center relative">
-            <div className="w-full max-w-[350px] lg:max-w-[450px] relative">
+            <div className="w-full max-w-[280px] lg:max-w-[320px] relative">
               <Fade>
-                <div className="relative z-10 aspect-[4/5] w-full group transition-transform duration-500 hover:-translate-y-1">
-                  <ProfileMark gradientId="about-profile-gradient" className="absolute inset-0 w-full h-full p-6 transition-transform duration-700 scale-100 group-hover:scale-105" />
+                <div className="relative z-10 aspect-[14/13] w-full group transition-transform duration-500 hover:-translate-y-1">
+                  <ProfileMark gradientId="about-profile-gradient" className="absolute inset-0 w-full h-full transition-transform duration-700 scale-100 group-hover:scale-105" />
                 </div>
                 <div className="absolute -bottom-8 -left-8 text-8xl lg:text-9xl font-black text-text-secondary/5 select-none pointer-events-none tracking-tighter mix-blend-multiply dark:mix-blend-screen z-0">DEV.</div>
               </Fade>
@@ -35,14 +36,14 @@ export default function About() {
               <div className="flex flex-col">
                 <Fade>
                   <h4 className="text-lg md:text-xl font-bold text-text-primary mb-4 flex items-center border-b border-text-secondary/20 pb-4">Who Am I</h4>
-                  <p className="text-base text-text-secondary leading-relaxed font-medium">I am a Full-Stack Developer building bilingual products with React, TypeScript, TanStack Start, and Next.js. My five featured projects span glassmorphic WebGL interfaces, a live temporary inbox, and Python-based GitHub automation through Telegram.</p>
+                  <p className="text-base text-text-secondary leading-relaxed font-medium">{professionalSummary}</p>
                 </Fade>
               </div>
               
               <div className="flex flex-col">
                 <Fade>
                   <h4 className="text-lg md:text-xl font-bold text-text-primary mb-4 flex items-center border-b border-text-secondary/20 pb-4">My Approach</h4>
-                  <p className="text-base text-text-secondary leading-relaxed font-medium">I combine visual design with practical engineering: adaptive 3D rendering, accessible motion, server-side API integration, and safer data handling. My projects use sanitized email content, encrypted credentials, and clear controls for destructive actions.</p>
+                  <p className="text-base text-text-secondary leading-relaxed font-medium">I connect React interfaces with backend APIs, authentication, and payment workflows. My engineering work includes tenant-scoped data, transactional order updates, signature-verified and idempotent webhooks, and end-to-end checks for authentication and checkout. I also build LLM-powered tools and asynchronous Python automation.</p>
                 </Fade>
               </div>
             </div>
@@ -93,7 +94,14 @@ export default function About() {
                 <FadeLeft delay={0.6}>
                   <div className="flex flex-col p-2 -m-2 rounded-xl transition-colors duration-300 hover:bg-thirdary/40">
                     <span className="text-xs uppercase tracking-widest font-bold text-text-secondary mb-1">Education</span>
-                    <span className="text-base font-semibold text-text-primary">Tanta University · Computer Science & AI</span>
+                    <span className="text-base font-semibold text-text-primary">Tanta University · B.Sc. Computer Science & AI</span>
+                  </div>
+                </FadeLeft>
+
+                <FadeLeft delay={0.7}>
+                  <div className="flex flex-col p-2 -m-2 rounded-xl transition-colors duration-300 hover:bg-thirdary/40">
+                    <span className="text-xs uppercase tracking-widest font-bold text-text-secondary mb-1">Languages</span>
+                    <span className="text-base font-semibold text-text-primary">Arabic (Native) · English (Professional)</span>
                   </div>
                 </FadeLeft>
               </div>

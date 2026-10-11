@@ -42,8 +42,8 @@ export default function ProfileHighlights({ items }: { items: readonly Highlight
 
   return (
     <div ref={ref} className="flex flex-col items-center justify-center relative">
-      <div className="relative z-10 w-full max-w-[288px] sm:max-w-[320px] md:max-w-[416px]">
-        <AnimatedProfileMark gradientId="hero-profile-gradient" className="block w-full h-auto aspect-square" active={inView && !paused && sequence.phase === "logo"} />
+      <div className="relative z-10 w-full max-w-[224px] sm:max-w-[256px] md:max-w-[320px]">
+        <AnimatedProfileMark gradientId="hero-profile-gradient" className="block w-full h-auto aspect-[14/13]" active={inView && !paused && sequence.phase === "logo"} />
       </div>
       <div className="relative z-20 mt-4 flex w-full justify-center md:mt-5">
         <RotatingProfileBadge items={items} visibleIndices={sequence.rotation.indices} onPauseChange={setPaused} />

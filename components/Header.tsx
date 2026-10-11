@@ -1,5 +1,4 @@
 "use client"
-import Image from "next/image"
 import { usePathname, useRouter } from "next/navigation"
 import { useState, useEffect } from "react"
 import FadeDown from "./animations/FadeDown"
@@ -80,10 +79,8 @@ export default function Header() {
       <div className="w-full max-w-5xl pointer-events-auto">
         <FadeDown>
           <div className="relative flex items-center justify-between py-3 md:py-4 px-6 md:px-8 bg-background/80 backdrop-blur-md border border-text-secondary/20 rounded-full shadow-lg transition-colors duration-300">
-            <div className="flex flex-row items-center">
-              <Image src="/logo.svg" alt="Abdelhamed Nada logo" width={32} height={32} className="portfolio-logo w-8 h-8 mr-2 shrink-0" />
-              {/* Typographic Logo */}
-              <span className="text-xl md:text-2xl font-black text-text-primary tracking-tighter">PORTFOLIO.</span>
+            <div className="flex items-center shrink-0">
+              <span className="text-xl md:text-2xl leading-none font-black text-text-primary tracking-tighter">PORTFOLIO.</span>
             </div>
 
             <nav className="flex-row md:gap-8 lg:gap-10 hidden lg:flex items-center">
