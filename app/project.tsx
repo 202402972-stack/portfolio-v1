@@ -1,11 +1,14 @@
 "use client"
 import Link from "next/link"
+import { useInView } from "react-intersection-observer"
 import FadeDown from "@/components/animations/FadeDown"
 import FadeUp from "@/components/animations/FadeUp"
 import ProjectCard from "@/components/ProjectCard"
 import { projectList } from "@/lib/projects"
 
 export default function Project() {
+  const { ref, inView } = useInView({ threshold: 0.1 })
+
   return (
     <section id="projects" className="w-full mx-auto py-24 md:py-32 cursor-default bg-background relative border-t border-text-secondary/10">
       <FadeDown>
@@ -15,8 +18,8 @@ export default function Project() {
         </div>
       </FadeDown>
 
-      <div className="w-full overflow-hidden relative py-4 motion-reduce:overflow-x-auto">
-        <div className="flex w-max animate-infinite-scroll hover:[animation-play-state:paused] focus-within:[animation-play-state:paused] motion-reduce:animate-none">
+      <div ref={ref} className="w-full overflow-hidden relative py-4 motion-reduce:overflow-x-auto">
+        <div style={{ animationPlayState: inView ? undefined : "paused" }} className="flex w-max animate-infinite-scroll hover:[animation-play-state:paused] focus-within:[animation-play-state:paused] motion-reduce:animate-none">
           {[false, true].map((duplicate) => (
             <div key={String(duplicate)} className="flex gap-6 px-3" aria-hidden={duplicate || undefined}>
               {projectList.map((project) => (
